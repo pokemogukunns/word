@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Display</title>
+  <script>
+    window.onload = function() {
+      // URLからクエリパラメータを取得
+      const urlParams = new URLSearchParams(window.location.search);
+      const word = urlParams.get('q');
+      
+      // <h1>タグにそのwordを代入
+      if (word) {
+        document.getElementById('wordDisplay').textContent = word;
+      } else {
+        document.getElementById('wordDisplay').textContent = 'Word not found.';
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1 id="wordDisplay">Loading...</h1>
+</body>
+</html>
